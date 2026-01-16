@@ -1,0 +1,33 @@
+---
+import ServiceCard from '../ui/ServiceCard.astro';
+
+import { getCollection } from 'astro:content';
+
+const allServices = await getCollection('services');
+
+const services = allServices.sort((a:any, b:any)=> a.data.order - b.data.order)
+
+console.log(services)
+---
+
+<section class="max-w-6xl mx-auto px-4 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl font-extrabold text-slate-900 sm:text-5xl mb-4">
+        Nuestros Servicios
+      </h1>
+      <p class="text-lg text-slate-600">Cuidamos a tu mascota las 24 horas.</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        services.map((service:any) => (
+          <ServiceCard 
+            title={service.data.title}
+            description={service.data.description}
+            image={service.data.image}
+            imageAlt={service.data.imageAlt}
+          />
+        ))
+      }
+    </div>
+  </section>
