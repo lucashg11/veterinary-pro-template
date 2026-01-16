@@ -15,11 +15,14 @@ importers:
         specifier: ^4.1.18
         version: 4.1.18(vite@6.4.1(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2))
       astro:
-        specifier: ^5.16.11
+        specifier: 5.16.11
         version: 5.16.11(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.55.1)(typescript@5.9.3)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
+      sharp:
+        specifier: ^0.34.5
+        version: 0.34.5
       tailwind-animations:
         specifier: ^1.0.1
         version: 1.0.1(tailwindcss@4.1.18)
@@ -2062,8 +2065,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@img/colour@1.0.0':
-    optional: true
+  '@img/colour@1.0.0': {}
 
   '@img/sharp-darwin-arm64@0.34.5':
     optionalDependencies:
@@ -3656,7 +3658,6 @@ snapshots:
       '@img/sharp-win32-arm64': 0.34.5
       '@img/sharp-win32-ia32': 0.34.5
       '@img/sharp-win32-x64': 0.34.5
-    optional: true
 
   shiki@3.21.0:
     dependencies:

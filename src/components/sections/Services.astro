@@ -5,9 +5,9 @@ import { getCollection } from 'astro:content';
 
 const allServices = await getCollection('services');
 
-const services = allServices.sort((a:any, b:any)=> a.data.order - b.data.order)
+const sortedServices = allServices.sort((a:any, b:any)=> a.data.order - b.data.order)
 
-console.log(services)
+
 ---
 
 <section class="max-w-6xl mx-auto px-4 py-12">
@@ -20,7 +20,7 @@ console.log(services)
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
-        services.map((service:any) => (
+        sortedServices.map((service:any) => (
           <ServiceCard 
             title={service.data.title}
             description={service.data.description}

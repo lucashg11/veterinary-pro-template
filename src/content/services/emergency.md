@@ -3,6 +3,7 @@ title: "Emergencias y Cirugía"
 description: "Cirujanos especializados y salas de recuperación controlada. Foco en emergencias críticas para salvar vidas las 24 horas."
 order: 3
 image: "../../assets/emergency.webp"
+imageAlt: "Emergencias veterinarias"
 ---
 
 ![Emergencias](../../assets/emergency.webp)

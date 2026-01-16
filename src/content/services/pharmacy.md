@@ -3,6 +3,7 @@ title: "Farmacia Veterinaria"
 description: "Equipada con las principales marcas de laboratorios..."
 order: 2
 image: "../../assets/pharmacy.webp"
+imageAlt: "Farmacia veterinaria"
 ---
 
 ![Farmacia veterinaria](../../assets/pharmacy.webp)

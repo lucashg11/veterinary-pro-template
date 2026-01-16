@@ -3,6 +3,7 @@ title: "Laboratorio Avanzado"
 description: "Tecnología de punta desarrollada por Pfizer. Resultados en minutos, tests rápidos de patologías y diagnóstico preciso las 24 horas."
 order: 3
 image: "../../assets/laboratory.webp"
+imageAlt: "Laboratorio veterinario"
 ---
 
 ![Laboratorio veterinario](../../assets/laboratory.webp)
