@@ -1,4 +1,4 @@
-[Español (README.md) | English]
+[Español | English (README.en.md)]
 
 # Budhapets - Plataforma Veterinaria de Alta Complejidad
 
