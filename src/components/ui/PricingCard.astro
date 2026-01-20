@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface PlanBenefit {
+    text: string;
+}
+
+const benefits:PlanBenefit[] = [
+    {text: "Consultas clinicas ilimitadas si cargo"},
+    {text: "Descuentos exclusivos en farmacia y laboratorio"},
+    {text: "Vacunacion anual y desparasitacion incluida"},
+    {text: "Prioridad en turnos para especialistas"},
+    {text: "Ecografias y Rayos X con bonificacion del 50%"}
+]
+---
+
+<div class="bg-blue-700/50 backdrop-blur-md p-8 lg:p-16 flex-1">
+    <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-2">
+        <Icon name={"mdi:check-decagram"} class=" text-blue-300 w-6 h-6" />
+        ¿Qué incluye el plan?
+    </h3>
+    <ul class="space-y-4">
+        {
+            benefits.map((benefit) => (
+                <li class="flex items-start gap-3 text-blue-50 text-lg">
+                    <Icon name={"mdi:check-circle-outline"} class="text-blue-300 w-6 h-6 mt-0.5 shrink-0" />
+                    <span>{benefit.text}</span>
+                </li>
+            ))
+        }
+    </ul>
+    <p class="mt-10 text-blue-300 text-sm italic">* Sujeto a auditoria medica previa. Sin limite de edad ni raza</p>
+</div>
