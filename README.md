@@ -1,46 +1,46 @@
-# Astro Starter Kit: Basics
+# Budhapets - Plataforma Veterinaria de Alta Complejidad
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Este proyecto es una Landing Page profesional desarrollada para Budhapets, una clínica veterinaria 24 horas. El objetivo principal es demostrar habilidades avanzadas en arquitectura frontend, optimización de activos y tipado estricto.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Decisiones Técnicas y Arquitectura
 
-## 🚀 Project Structure
+### 1. Astro 5 + pnpm
 
-Inside of your Astro project, you'll see the following folders and files:
+Se migró de Bun a pnpm para garantizar la estabilidad absoluta de las dependencias. Astro fue elegido por su capacidad de generar un sitio estático extremadamente liviano, enviando "Cero JavaScript" al cliente por defecto.
 
-```text
+### 2. Content Collections & Zod
+
+En lugar de hardcodear los servicios, se implementaron Astro Content Collections.
+
+- **Por qué**: Permite separar los datos (Markdown) de la lógica de presentación.
+- **Validación**: Se utiliza Zod para definir esquemas que aseguran que cada servicio tenga título, descripción, orden e imagen, evitando errores en tiempo de compilación.
+
+### 3. TypeScript & Interfaces (Clave Diplomatura UTN)
+
+Se aplicó lo aprendido en la formación de la UTN para robustecer el código:
+
+- **Interfaces de Props**: Todos los componentes (`ServiceCard`, `ContactForm`, `FeatureItem`) poseen interfaces que definen estrictamente los datos que reciben.
+- **Funciones `:void`**: El manejo de eventos en el formulario utiliza tipado `:void` para asegurar que las funciones de captura de datos no retornen valores inesperados.
+
+### 4. Optimización de Imágenes
+
+Se implementó el componente `<Image />` de Astro con carga híbrida:
+
+- **Eager/High Priority**: Para el Hero y el primer servicio (mejorando el LCP).
+- **Lazy/Low Priority**: Para el resto de la grilla, optimizando el ancho de banda en dispositivos móviles.
+
+## 📁 Estructura del Proyecto
+
+```plaintext
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── src/
+│   ├── assets/             # Imágenes originales procesadas por Astro
+│   ├── components/         # Componentes atómicos y modulares (UI)
+│   ├── content/            # Datos (Markdown) y configuración de esquemas
+│   │   └── services/       # Colección de servicios de la clínica
+│   ├── layouts/            # Estructura base de las páginas
+│   └── pages/              # Rutas de la aplicación
+├── public/                 # Archivos estáticos
+├── package.json            # Configuración de pnpm y scripts
+└── astro.config.mjs        # Configuración del framework
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
