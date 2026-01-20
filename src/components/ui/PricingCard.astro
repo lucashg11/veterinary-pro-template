@@ -3,14 +3,15 @@ import { Icon } from "astro-icon/components";
 
 interface PlanBenefit {
     text: string;
+    isImportant: boolean;
 }
 
 const benefits:PlanBenefit[] = [
-    {text: "Consultas clinicas ilimitadas si cargo"},
-    {text: "Descuentos exclusivos en farmacia y laboratorio"},
-    {text: "Vacunacion anual y desparasitacion incluida"},
-    {text: "Prioridad en turnos para especialistas"},
-    {text: "Ecografias y Rayos X con bonificacion del 50%"}
+    {text: "Consultas clinicas ilimitadas si cargo", isImportant: true},
+    {text: "Descuentos exclusivos en farmacia y laboratorio", isImportant: true},
+    {text: "Vacunacion anual y desparasitacion incluida", isImportant: false},
+    {text: "Prioridad en turnos para especialistas", isImportant: false},
+    {text: "Ecografias y Rayos X con bonificacion del 50%", isImportant: false}
 ]
 ---
 
@@ -24,7 +25,7 @@ const benefits:PlanBenefit[] = [
             benefits.map((benefit) => (
                 <li class="flex items-start gap-3 text-blue-50 text-lg">
                     <Icon name={"mdi:check-circle-outline"} class="text-blue-300 w-6 h-6 mt-0.5 shrink-0" />
-                    <span>{benefit.text}</span>
+                    <span class={benefit.isImportant ? "font-bold text-xl" : ""}>{benefit.text}</span>
                 </li>
             ))
         }
