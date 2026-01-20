@@ -1,0 +1,47 @@
+---
+import FeatureItem from "../ui/FeatureItem.astro";
+
+const features = [
+    {
+        title: "Atención 24/7",
+        description: "Guardia veterinaria permanente. Estamos listos para cualquier emergencia, sin importar la hora",
+        iconName: "mdi:clock-time-eight-outline",
+    },
+    {
+        title: "Laboratorio Propio",
+        description: "Equipamente de alta complejidad para obtener resultaados y diagnosticos en cuestion de minutos",
+        iconName: "mdi:microscope",
+    },
+    {
+        title: "Pasion por la Vida",
+        description: "Nuestro compromiso es el bienestar integral y calidad de vida de cada paciente",
+        iconName: "mdi:heart-pulse",
+    },
+    {
+        title: "Cirugía Avanzada",
+        description: "Quirofano equipados y especialistas con trayectoria en procedimientos de alta complejidad",
+        iconName: "mdi:medical-bag",
+    }
+    
+]
+---
+
+<section id="Nosotros" class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4">
+        <header class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="text-3xl font-extrabold text-slate-900 md:text-5xl mb-4 tracking-tight">¿Por qué elegir <span class="text-blue-600">Budhapets</span>?</h2>
+            <p class="text-lg text-slate-600">Combinamos excelencia médica con el amor que tus mascotas merecen</p>
+        </header>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {
+                features.map((feature) => (
+                    <FeatureItem 
+                        title={feature.title}
+                        description={feature.description}
+                        iconName={feature.iconName}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>
