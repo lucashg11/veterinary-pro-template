@@ -1,4 +1,4 @@
-[Español (README.md) | English]
+[[Español](README.md) | English]
 
 # [Budhapets-Veterinary]("https://veterinary-pro-template.netlify.app/") - High-Complexity Veterinary Platform
 
