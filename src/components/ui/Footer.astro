@@ -1,0 +1,104 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const currentYear = new Date().getFullYear();
+
+// Aplicando lo aprendido: Interfaz para los links
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+const quickLinks: FooterLink[] = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Plan de Salud', href: '#plan-salud' },
+  { label: 'Contacto', href: '#contacto' },
+];
+
+const socialLinks = [
+  { icon: 'mdi:instagram', href: 'https://www.instagram.com/budhapets/', label: 'Instagram' },
+  { icon: 'mdi:facebook', href: 'https://www.facebook.com/veterinariabudhapets/?locale=es_LA', label: 'Facebook' },
+  { icon: 'mdi:whatsapp', href: 'https://wa.me/5491151799970', label: 'WhatsApp' },
+];
+---
+
+<footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      
+      <div class="space-y-6">
+        <a href="/" class=" text-2xl font-bold text-white flex items-center gap-2">
+           <Icon class="w-8 h-8 text-blue-600" name="mdi:paw"/>
+            <span>Budhapets</span>
+        </a>
+        <p class="text-slate-400 leading-relaxed">
+          Líderes en medicina veterinaria de alta complejidad en Zárate. Cuidamos a tu mascota las 24 horas con tecnología de vanguardia.
+        </p>
+        <div class="flex gap-4">
+          {socialLinks.map(social => (
+            <a href={social.href} aria-label={social.label} class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+              <Icon name={social.icon} class="w-5 h-5" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold text-lg mb-6">Navegación</h3>
+        <ul class="space-y-4">
+          {quickLinks.map(link => (
+            <li>
+              <a href={link.href} class="hover:text-blue-400 transition-colors flex items-center gap-2">
+                <Icon name="mdi:chevron-right" class="w-4 h-4 text-blue-600" />
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold text-lg mb-6">Servicios</h3>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-2 italic text-slate-500">
+            <Icon name="mdi:star-outline" class="w-4 h-4" />
+            Emergencias 24hs
+          </li>
+          <li class="flex items-center gap-2 italic text-slate-500">
+            <Icon name="mdi:star-outline" class="w-4 h-4" />
+            Cirugía Compleja
+          </li>
+          <li class="flex items-center gap-2 italic text-slate-500">
+            <Icon name="mdi:star-outline" class="w-4 h-4" />
+            Laboratorio Pfizer
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-bold text-lg mb-6">Contacto Directo</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <Icon name="mdi:phone-outline" class="w-5 h-5 text-blue-500 mt-1" />
+            <span>+54 11 1234-5678</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="mdi:email-outline" class="w-5 h-5 text-blue-500 mt-1" />
+            <span>info@budhapets.com.ar</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <Icon name="mdi:clock-outline" class="w-5 h-5 text-blue-500 mt-1" />
+            <span>Atención Permanente 24/7</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+      <p>&copy; {currentYear} Budhapets Veterinaria. Todos los derechos reservados.</p>
+      <p class="mt-2 text-slate-600 font-mono text-xs italic">Desarrollado con Astro 5 & TypeScript</p>
+    </div>
+  </div>
+</footer>
