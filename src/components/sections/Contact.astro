@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components';
+import ContactForm from '../ui/ContactForm.astro';
+---
+
+<section class="py-20 bg-slate-50" id="contacto">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+      
+      <div class="bg-slate-900 p-8 md:p-12 text-white w-full md:w-2/5">
+        <h2 class="text-3xl font-bold mb-6 text-blue-400 font-tight">Contactanos</h2>
+        <p class="text-slate-400 mb-10 text-lg leading-relaxed">
+          Atención de alta complejidad las 24 horas. Tu tranquilidad y la salud de tu mascota son nuestra prioridad.
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex items-center gap-4 group">
+            <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <Icon name="mdi:whatsapp" class="w-6 h-6" />
+            </div>
+            <div>
+              <p class="text-sm text-slate-500 uppercase font-bold tracking-wider">WhatsApp 24hs</p>
+              <p class="text-lg font-medium">+54 11 1234-5678</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 group">
+            <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+              <Icon name="mdi:map-marker-outline" class="w-6 h-6" />
+            </div>
+            <div>
+              <p class="text-sm text-slate-500 uppercase font-bold tracking-wider">Ubicación</p>
+              <p class="text-lg font-medium">Zárate, Buenos Aires</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 rounded-2xl overflow-hidden h-40 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center">
+            <Icon name="mdi:google-maps" class="w-12 h-12 text-slate-700" />
+        </div>
+      </div>
+
+      <div class="p-8 md:p-12 w-full md:w-3/5 bg-white">
+        <ContactForm />
+      </div>
+
+    </div>
+  </div>
+</section>
