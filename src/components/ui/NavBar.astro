@@ -1,0 +1,60 @@
+---
+import { Icon } from "astro-icon/components";
+
+
+const navLinks = [
+    {name: 'Inicio', href: '/'},
+    {name: 'Nosotros', href: '/about'},
+    {name: 'Servicios', href: '/services'},
+    {name: 'Plan de salud', href: '/plan-salud'},
+    {name: 'Contacto', href: '/contact'},
+]
+---
+
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 bg-white">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="/" class=" text-2xl font-bold text-slate-900 flex items-center gap-2">
+           <Icon class="w-8 h-8 text-blue-600" name="mdi:paw"/>
+            <span>Budhapets</span>
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            {
+                navLinks.map((link) => (
+                    <a href={link.href} class="text-slate-700 hover:text-blue-800 font-medium transition-colors">{link.name}</a>
+                ))
+            }
+        </div>
+        <button id="menu-btn" class="md:hidden text-slate-800">
+            <Icon class="w-8 h-8" name="mdi:hamburger-menu" />
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-slate-100 p-4 md:hidden">
+        <div class="flex flex-col gap-4">
+            {
+                navLinks.map((link) => (
+                    <a href={link.href} class="text-slate-700 font-medium transition-colors">{link.name}</a>
+                ))
+            }
+        </div>
+    </div>
+</nav>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    window.addEventListener('scroll', ()=>{
+        if(window.scrollY > 100){
+            navbar?.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+            navbar?.classList.remove('py-4');
+        }else{
+            navbar?.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+            navbar?.classList.add('py-4');
+        }
+    })
+
+    menuBtn?.addEventListener('click', ()=>{
+        mobileMenu?.classList.toggle('hidden');
+    })
+</script>
