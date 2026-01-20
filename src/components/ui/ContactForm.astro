@@ -48,10 +48,10 @@ const { buttonText = "Enviar mensaje" } = Astro.props;
 </form>
 
 <script>
-  // Actualizamos la Interface con el nuevo campo
+
   interface ContactData {
     name: string;
-    email: string; // <-- Nuevo campo tipado
+    email: string;
     petType: string;
     subject: string;
     message: string;
@@ -63,7 +63,7 @@ const { buttonText = "Enviar mensaje" } = Astro.props;
     e.preventDefault();
     const formData = new FormData(form as HTMLFormElement);
     
-    // Capturamos el nuevo campo respetando el contrato de la Interface
+    
     const data: ContactData = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
