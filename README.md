@@ -1,6 +1,6 @@
 [Español | English (README.en.md)]
 
-# Budhapets - Plataforma Veterinaria de Alta Complejidad
+# ![Budhapets-Veterinaria](https://veterinary-pro-template.netlify.app/) - Plataforma Veterinaria de Alta Complejidad
 
 Este proyecto es una Landing Page profesional desarrollada para Budhapets, una clínica veterinaria 24 horas. El objetivo principal es demostrar habilidades avanzadas en arquitectura frontend, optimización de activos y tipado estricto.
 
