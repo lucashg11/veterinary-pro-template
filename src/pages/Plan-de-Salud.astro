@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/ui/NavBar.astro";
+import Footer from "../components/ui/Footer.astro";
+
+import '../styles/global.css'
+---
+
+<Layout title="Plan de Salud - Budhapets">
+    <NavBar />
+    <main class="pt-32 pb-20">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-slate-900 mb-8" transition:name="plan-title">
+        Un plan de salud pensado para tu tranquilidad.
+      </h1>
+      
+      <div class="prose prose-lg text-slate-600">
+        <p>El plan de salud es una herramienta que te permite proteger a tu mascota en caso de enfermedades o accidentes. </p>
+        
+        <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 my-10">
+          <h2 class="text-2xl font-bold text-blue-900 mb-4 italic">Beneficio destacado del mes</h2>
+          <p class="text-blue-800">Durante enero de 2026, todas las nuevas afiliaciones cuentan con el primer mes bonificado.</p>
+        </div>
+      </div>
+
+      <a href="/" class="inline-flex items-center text-blue-600 font-bold hover:gap-2 transition-all">
+        <Icon name="mdi:arrow-left" class="w-5 h-5" />
+        Volver al inicio
+      </a>
+    </div>
+  </main>
+    <Footer />
+</Layout>

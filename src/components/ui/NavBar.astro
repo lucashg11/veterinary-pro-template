@@ -44,17 +44,23 @@ const navLinks = [
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    window.addEventListener('scroll', ()=>{
-        if(window.scrollY > 100){
-            navbar?.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
-            navbar?.classList.remove('py-4');
-        }else{
-            navbar?.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
-            navbar?.classList.add('py-4');
-        }
-    })
+    function initNavbar(){
+        window.addEventListener('scroll', ()=>{
+            if(window.scrollY > 100){
+                navbar?.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+                navbar?.classList.remove('py-4');
+            }else{
+                navbar?.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+                navbar?.classList.add('py-4');
+            }
+        })        
+        
+        menuBtn?.addEventListener('click', ()=>{
+            mobileMenu?.classList.toggle('hidden');
+        })
+    }
 
-    menuBtn?.addEventListener('click', ()=>{
-        mobileMenu?.classList.toggle('hidden');
-    })
+    initNavbar();
+
+    document.addEventListener('astro:after-swap', initNavbar)
 </script>
