@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/ui/NavBar.astro";
+import Footer from "../components/ui/Footer.astro";
+import { Image } from "astro:assets";
+import aboutImage from "../assets/about_img.webp";
+import { Icon } from "astro-icon/components";
+
+import "../styles/global.css"
+
+interface Value {
+    title: string;
+    description: string;
+    icon: string;
+}
+
+const values: Value[]=[
+    { title: "Excelencia", description: "Formación constante en medicina de vanguardia.", icon: "mdi:certificate" },
+  { title: "Empatía", description: "Entendemos el vínculo único con tu mascota.", icon: "mdi:hand-heart" },
+  { title: "Transparencia", description: "Comunicación clara en cada etapa del tratamiento.", icon: "mdi:eye-outline" }
+]
+---
+
+<Layout title="Nosotros">
+    <NavBar/>
+    <main class="pt-32 pb-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <h1 class="text-6xl lg:text-7xl font-extrabold text-slate-900 mt-4 leading-tight" transition:name="about-title">Pasion por la vida, <br>
+                    <span class="text-blue-600"> excelencia médica.</span></h1>
+                <p class="text-xl text-slate-600 leading-relaxed">
+                    Desde nuestra fundación en La Paternal, hemos trabajado para ser el centro de referencia en salud animal que la región merece.
+                </p>
+            </div>
+            <div class="max-w-5xl mx-auto mb-20">
+                <div class="rounded-3xl overflow-hidden shadow-2xl max-w-2xl h-[400px] lg:h-[600px] mx-auto">
+                    <Image src={aboutImage} alt="Budhapets" loading="eager" class="w-full h-full object-fit" transition:name="about-image"/>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {values.map((value) => (
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 group lg:hover:shadow-lg transition-all">
+                        <Icon name={value.icon} class="w-8 h-8 text-blue-600 mb-2" />
+                        <h3 class="text-slate-900 font-bold text-xl mb-3">{value.title}</h3>
+                        <p class="text-slate-600 leading-relaxed">{value.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </main>
+    <Footer/>
+</Layout>
