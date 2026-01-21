@@ -34,12 +34,12 @@ const stats: Stat[] = [
 ]
 ---
 
-<section id="#about" class="py-20 bg-white overflow-hidden">
+<section id="about" class="py-20 bg-white overflow-hidden">
     <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center gap-16">
             <div class="flex-1 relative">
                 <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl max-w-2xl">
-                    <Image class="w-full h-full object-cover" src={aboutImage} alt="Budhapets"  loading="eager"/>
+                    <Image class="w-full h-full object-cover" src={aboutImage} alt="Budhapets"  loading="eager" transition:name="about-image"/>
                 </div>
                 <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-blue-600/10 rounded-full z-0"></div>
                 <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-600 rounded-2xl z-0 rotate-12"></div>
@@ -47,12 +47,16 @@ const stats: Stat[] = [
             <div class="flex-1 space-y-8">
                 <div >
                     <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Nuestra Historia</span>
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 leading-tight">Pasion por la vida, <br>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 leading-tight" transition:name="about-title">Pasion por la vida, <br>
                     <span class="text-blue-600"> excelencia médica.</span></h2>
                 </div>
                 <p class="text-slate-600 text-lg leading-relaxed">Budhapets nació en el barrio de la paternal (CABA, Buenos Aires) con un propósito claro: elevar el estandar de la medicina veterinaria en la region. No somos solo una clínica; somos un centro de derivación donde la tecnología y el conocimiento se unen para resolver los casos más complejos.</p>
                 <p class="text-slate-600 text-lg leading-relaxed italic border-l-4 border-blue-600 pl-6">"Entendemos que tu mascota es parte de tu familia. Por eso, nuestro equipo médico trabaja con la misma dedicación y profesionalismo que en la medicina humana."</p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+                <a href="/about" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-lg font-bold lg:hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 group">
+                    Cononce más de Nosotros
+                    <Icon name="mdi:arrow-right" class="w-5 h-5 lg:group-hover:translate-x-1 transition-transform" />
+                </a>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 pt-4">
                     {stats.map((stat) => (
                         <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 group lg:hover:bg-blue-200 transition-colors">
                             <Icon name={stat.icon} class="w-8 h-8 text-blue-600 mb-2" />
@@ -61,6 +65,7 @@ const stats: Stat[] = [
                         </div>
                     ))}
                 </div>
+                
             </div>
         </div>
     </div>
