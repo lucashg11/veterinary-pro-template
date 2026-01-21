@@ -1,6 +1,6 @@
 ---
 title: "Farmacia Veterinaria"
-description: "Equipada con las principales marcas de laboratorios..."
+description: "Equipada con las principales marcas de laboratorios. Única farmacia 24 horas con asesoramiento profesional y todos los medios de pago."
 order: 2
 image: "../../assets/pharmacy.webp"
 imageAlt: "Farmacia veterinaria"
