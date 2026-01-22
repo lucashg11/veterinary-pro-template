@@ -4,9 +4,11 @@ description: "Equipada con las principales marcas de laboratorios. Única farmac
 order: 2
 image: "../../assets/pharmacy.webp"
 imageAlt: "Farmacia veterinaria"
+slug: "farmacia-veterinaria"
 ---
 
-![Farmacia veterinaria](../../assets/pharmacy.webp)
+<!--
+![Farmacia veterinaria](../../assets/pharmacy.webp) -->
 
 Contamos con una muy equipada farmacia. Al existir tanta variedad de medicación, nuestros profesionales te guiarán a la hora de la compra.
 

@@ -4,9 +4,10 @@ description: "Cirujanos especializados y salas de recuperación controlada. Foco
 order: 3
 image: "../../assets/emergency.webp"
 imageAlt: "Emergencias veterinarias"
+slug: "emergencias-y-cirugia"
 ---
 
-![Emergencias](../../assets/emergency.webp)
+<!-- ![Emergencias](../../assets/emergency.webp) -->
 
 Contamos con un equipo de **cirujanos altamente especializados** y con amplia trayectoria que nos permiten estar presentes en los momentos más difíciles.
 

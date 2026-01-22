@@ -4,9 +4,10 @@ description: "Tecnología de punta desarrollada por Pfizer. Resultados en minuto
 order: 3
 image: "../../assets/laboratory.webp"
 imageAlt: "Laboratorio veterinario"
+slug: "laboratorio-avanzado"
 ---
 
-![Laboratorio veterinario](../../assets/laboratory.webp)
+<!-- ![Laboratorio veterinario](../../assets/laboratory.webp) -->
 
 Contamos con el laboratorio más avanzado del mercado desarrollado por **Pfizer**. Con una mínima muestra de sangre, es cuestión de minutos obtener un análisis completo para el mejor diagnóstico.
 
